@@ -8,8 +8,8 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Редирект с www на без www
-RewriteCond %{HTTP_HOST} ^www\.imprdesign\.ru$ [NC]
-RewriteRule ^(.*)$ https://imprdesign.ru/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.imprdesign42\.ru$ [NC]
+RewriteRule ^(.*)$ https://imprdesign42.ru/$1 [R=301,L]
 
 # Добавление слеша в конец URL
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -22,7 +22,7 @@ RewriteRule ^(.*)index\.(php|html)$ /$1 [R=301,L]
 
 # Защита от хотлинка изображений
 RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^https?://(www\.)?imprdesign.ru/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?imprdesign42.ru/.*$ [NC]
 RewriteRule \.(gif|jpg|jpeg|png|webp)$ - [F]
 
 # Защита важных файлов
@@ -32,7 +32,7 @@ Deny from all
 </FilesMatch>
 
 # Установка часового пояса и кодировки
-SetEnv TZ Europe/Moscow
+SetEnv TZ Asia/Novosibirsk
 AddDefaultCharset UTF-8
 
 # Включение сжатия
